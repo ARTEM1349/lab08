@@ -1,0 +1,90 @@
+\hypertarget{main_8c}{}\doxysection{src/main.c File Reference}
+\label{main_8c}\index{src/main.c@{src/main.c}}
+
+
+Головний файл  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lib.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Головний файл 
+
+Це файл, який містить точку входу, виклики функцій lab05, lab06 та значення для аргументів цих функцій. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Головна функція.
+
+Послідовність дій
+
+
+\begin{DoxyItemize}
+\item Присвоїти значення аргументам argc і argv. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & -\/ аргумент типу int необхідний для обчислення всіх щасливих квитків. \\
+\hline
+{\em argv} & -\/ масив типу char який зберігатиме в собі значення від якого почнеться перевірка всіх квитків.\\
+\hline
+\end{DoxyParams}
+
+\item Створення змінних яким буде надано значення для аргументів функцій link lab05, lab06.
+
+t -\/ зберігає значення за умовчуванням від якого буде починатися перевірка квитків для функції lab06. Воно буде використовуватися якщо не будуть передані аргументи командного рядка.
+
+x -\/ зберігає рандомне значення, яке є мінімальним числом в діапазоні для функції lab05.
+
+y -\/ зберігає рандомне значення, яке є максимальним числом в діапазоні для функції lab05.
+
+c -\/ змінна яка використовується для перевірки аргументів командного рядка.
+\item Гненеруємо рандомні числа за допомогою генератора rand() та функції srand(), після чого привласнюємо їх пріменним x і y.
+\item Потім викликаємо функцію lab05 і присвоюємо її аргументам значення примінних x та y.
+\end{DoxyItemize}
+
+Функція lab05 
+\begin{DoxyParams}{Parameters}
+{\em x,y} & -\/ діапазон в якому буде знаходитися найбільше просте число \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+успішний код повернення з програми (0)
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item Робимо перевірку на те, чи були введені аргументи через командний рядок.
+\item Якщо перевірка була пройдена, то переобразуємо аргумент командного рядка в значення типу int і присвоюємо його примінній t
+\item Робимо перевірку, чи менше t мінімального значення квитка 1000.
+\item Якщо перевірка була пройдена то присвоюємо t аргументам функції lab06
+\item Якщо одна з перевірок не була пройдена, то присвоюємо аргументам функції lab06 значення за замовчуванням.
+\end{DoxyItemize}
+
+Функція lab06 
+\begin{DoxyParams}{Parameters}
+{\em t} & -\/ Число від якого розпочнеться перевірка квитків \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+успішний код повернення з програми (0) 
+\end{DoxyReturn}
